@@ -32,13 +32,13 @@ def register():
                 (username, generate_password_hash(password))
             )
             db.commit()
-            return rediect(url_for('auth.login'))
+            return redirect(url_for('auth.login'))
         
         flash(error)
 
     return render_template('auth/register.html')
 
-bp.route('/login', methods=('GET', 'POST'))
+@bp.route('/login', methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
         username = request.form['username']
@@ -80,12 +80,11 @@ def logout():
     return redirect(url_for('index'))
 
 def login_required(view):
-    @functional.wraps(view)
+    @functools.wraps(view)
     def wrapped_view(**kwargs):
-        if g.user if None:
+        if g.user is None:
             return redirect(url_for('auth.login'))
 
         return view(**kwargs)
 
     return wrapped_view
-    
