@@ -54,14 +54,14 @@ def get_post(id, check_author=True):
     if post is None:
         abort(404, "Post id {0} doesn't exist".format(id))
 
-    if check_author and post['author_id'] != g.user['id']:
-        abort(403)
+    #if check_author and post['author_id'] != g.user['id']:
+        #abort(403)
 
     return post
 
 @bp.route('/blog/<int:id>/update', methods=('GET', 'POST'))
 @login_required
-def update(id):
+def update(id):  
     post = get_post(id)
 
     if request.method == 'POST':
