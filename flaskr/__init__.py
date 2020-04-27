@@ -8,10 +8,7 @@ app.config.from_mapping(
     DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
     )
 
-if test_config is None:
-    app.config.from_pyfile('config.py', silent=True)
-else:
-    app.config.from_mapping(test_config)
+app.config.from_pyfile('config.py', silent=True)
 
 try:
     os.makedirs(app.instance_path)
@@ -31,4 +28,7 @@ from . import landing
 app.register_blueprint(landing.bp)
 app.add_url_rule('/', endpoint='index')
 
-return app
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
+
+#return app
