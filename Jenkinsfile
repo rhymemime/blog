@@ -17,7 +17,7 @@ pipeline {
                 ls ./dist
                 sudo /bin/cp /var/lib/jenkins/workspace/personal-site-build/dist/flaskr-1.0.0-py3-none-any.whl /home/site-manager/personalSite/
                 deactivate
-                sudo su -l site-manager
+                sudo su - site-manager
                 cd
                 whoami
                 ls
