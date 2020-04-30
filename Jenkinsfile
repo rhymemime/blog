@@ -14,6 +14,7 @@ pipeline {
                 ls
                 pwd
                 python setup.py bdist_wheel
+                cp flaskr-1.0.0-py3-none-any.whl /home/site-manager/
                 """
             }
         }
