@@ -8,7 +8,7 @@ pipeline {
                 sh 'touch ./tmpfile'
                 git 'https://github.com/rhymemime/blog.git'
                 sh """
-                python -m virtualenv venv
+                python3 -m virtualenv venv
                 . ./venv/bin/activate
                 pip install wheel
                 ls
