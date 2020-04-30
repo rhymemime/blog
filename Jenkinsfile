@@ -19,6 +19,7 @@ pipeline {
                 deactivate
                 sudo su -l site-manager
                 cd
+                ls
                 cd ./personalSite
                 . ./venv/bin/activate
                 pip install --upgrade --force-reinstall /home/site-manager/flaskr-1.0.0-py3-none-any.whl
