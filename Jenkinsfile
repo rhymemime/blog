@@ -6,8 +6,15 @@ pipeline {
             steps {
                 echo 'Building' 
                 sh 'touch ./tmpfile'
-                sh 'python -m venv ./venv'
-
+                git 'https://github.com/rhymemime/blog.git'
+                sh """
+                python -m virtualenv venv
+                . ./venv/bin/activate
+                pip install wheel
+                ls
+                pwd
+                python setup.py bdist_wheel
+                """
             }
         }
     }
