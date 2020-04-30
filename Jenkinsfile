@@ -17,8 +17,11 @@ pipeline {
                 ls ./dist
                 sudo /bin/cp /var/lib/jenkins/workspace/personal-site-build/dist/flaskr-1.0.0-py3-none-any.whl /home/site-manager/personalSite/
                 deactivate
-                . /home/site-manager/personalSite/venv/bin/activate
-                sudo -u site-manager /home/site-manager/personalSite/venv/bin/python -m pip install --upgrade --force-reinstall /home/site-manager/flaskr-1.0.0-py3-none-any.whl
+                sudo su -l site-manager
+                cd
+                cd ./personalSite
+                . ./venv/bin/activate
+                pip install --upgrade --force-reinstall /home/site-manager/flaskr-1.0.0-py3-none-any.whl
                 sudo systemctl restart personalsite
                 echo 'finishing!'
                 """
