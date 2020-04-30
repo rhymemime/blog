@@ -21,6 +21,7 @@ pipeline {
                 pip install --upgrade --force-reinstall /home/site-manager/personalSite/flaskr-1.0.0-py3-none-any.whl
                 sudo systemctl restart personalsite
                 HERE
+                echo 'finishing!'
                 """
                 echo 'If this were Jenkins, we would do some testing, but it\'s not, so bye from Jankins'
             }
