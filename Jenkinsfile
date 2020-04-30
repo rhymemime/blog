@@ -20,7 +20,7 @@ pipeline {
                 . /home/site-manager/personalSite/venv/bin/activate
                 sudo -u site-manager /home/site-manager/personalSite/venv/bin/python -m pip install --upgrade --force-reinstall /home/site-manager/flaskr-1.0.0-py3-none-any.whl
                 sudo systemctl restart personalsite
-                echo 'finishing'
+                echo 'finishing!'
                 """
             }
         }
