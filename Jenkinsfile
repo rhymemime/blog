@@ -23,7 +23,7 @@ pipeline {
                 ls
                 cd ./personalSite
                 . ./venv/bin/activate
-                pip install --upgrade --force-reinstall /home/site-manager/flaskr-1.0.0-py3-none-any.whl
+                pip install --upgrade --force-reinstall /home/site-manager/personalSite/flaskr-1.0.0-py3-none-any.whl
                 sudo systemctl restart personalsite
                 HERE
                 echo 'finishing!'
