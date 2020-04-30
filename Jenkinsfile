@@ -5,7 +5,8 @@ pipeline {
         stage('Build') { 
             steps {
                 echo 'Building' 
-                touch tmpfile
+                sh 'touch ./tmpfile'
+
             }
         }
     }
