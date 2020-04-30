@@ -19,6 +19,7 @@ pipeline {
                 deactivate
                 sudo su -l site-manager
                 cd
+                whoami
                 ls
                 cd ./personalSite
                 . ./venv/bin/activate
